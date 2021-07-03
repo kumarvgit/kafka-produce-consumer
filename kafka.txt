@@ -1,0 +1,13 @@
+-- https://www.javatpoint.com/installing-kafka-on-linux
+-- https://www.javatpoint.com/creating-kafka-topics
+-- Create a new topic
+	kafka-topics.sh -zookeeper localhost:2181 -topic sampletopic --create --partitions 1 --replication-factor 1
+-- list topics
+	kafka-topics.sh -zookeeper localhost:2181 --list
+-- kafka-topics.sh -zookeeper localhost:2181 --describe --topic sampletopic
+
+--https://www.javatpoint.com/kafka-console-consumer
+	kafka-console-consumer.sh --bootstrap-server localhost:9092 -topic sampletopic
+	kafka-console-producer.sh --broker-list localhost:9092 --topic sampletopic
+	
+
