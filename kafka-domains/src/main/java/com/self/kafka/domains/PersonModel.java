@@ -2,6 +2,8 @@ package com.self.kafka.domains;
 
 import java.io.Serializable;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -24,10 +26,13 @@ public class PersonModel implements Serializable {
 	 */
 	private static final long serialVersionUID = 1401677564230712415L;
 
+	@JsonProperty(value = "fName")
 	private String fName;
 	
+	@JsonProperty(value = "lName")
 	private String lName;
 	
+	@JsonProperty(value = "age")
 	private Integer age;
 	
 }
