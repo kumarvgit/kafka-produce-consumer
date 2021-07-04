@@ -27,10 +27,10 @@ public class PersonController {
 	/**
 	 * Lombok and constructor based injection.
 	 */
-	private final KafkaTemplate<String, String> kafkaTemplate;
+	private final KafkaTemplate<String, PersonModel> kafkaTemplate;
 	
 	@PostMapping(path = "/kafka")
-	public ResponseEntity<Void> postPersonOnTopic(@RequestBody String personModel) {
+	public ResponseEntity<Void> postPersonOnTopic(@RequestBody PersonModel personModel) {
 		log.debug("Received request body as: " + personModel);
 		
 		kafkaTemplate.send(KAFKA_SAMPLE_TOPIC, personModel);

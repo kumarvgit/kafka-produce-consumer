@@ -6,7 +6,6 @@ spring:
     producer: 
       bootstrap-servers: 
         localhost:9092
-      key.deserializer:
-        org.apache.kakfa.common.serialization.StringSerializer
-      value.deserializer: 
-        org.apache.kafka.common.serialization.StringSerializer
+
+spring.kafka.producer.key-serializer: org.apache.kafka.common.serialization.StringSerializer
+spring.kafka.producer.value-serializer: org.springframework.kafka.support.serializer.JsonSerializer

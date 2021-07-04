@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.self.kafka.domains.PersonModel;
+
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -35,7 +37,7 @@ public class PersonController {
 	}
 
 	@KafkaListener(topics = KAFKA_SAMPLE_TOPIC, groupId = "test-consumer-group")
-	public void consume(String message) throws IOException {
+	public void consume(PersonModel message) throws IOException {
 		log.info("Message received is " + message);
 	}
 
