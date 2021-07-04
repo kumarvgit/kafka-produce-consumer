@@ -1,4 +1,7 @@
 -- https://www.javatpoint.com/installing-kafka-on-linux
+
+-- zookeeper-server-start.sh /home/workstation/kafka/kafka_2.13-2.8.0/config/zookeeper.properties
+-- kafka-server-start.sh /home/workstation/kafka/kafka_2.13-2.8.0/config/server.properties
 -- https://www.javatpoint.com/creating-kafka-topics
 -- Create a new topic
 	kafka-topics.sh -zookeeper localhost:2181 -topic sampletopic --create --partitions 1 --replication-factor 1
